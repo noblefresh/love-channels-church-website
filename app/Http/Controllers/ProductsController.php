@@ -1,0 +1,59 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Session;
+
+class ProductsController extends Controller
+{
+    public function addProductToCart(int $id)
+    {
+        // return $id;
+        if ($id != '') {
+            // add item to cart 
+            $product = Product::find($id);
+            if ($product != null) {
+                $item = [
+                    'id' => $product->id,
+                    'name' => $product->name,
+                    'price' => $product->price,
+                    'quantity' => 1,
+                    'thumbnail' => $product->thumbnail
+                ];
+                // Session::forget('cartItems');
+                // Session::forget('cartItemsTotal');
+                if (Session::get('cartItems') != null) {
+                    if (array_search($id, array_column(Session::get('cartItems'), 'id')) === false){
+
+                        Session::push('cartItems', $item);
+                        $totalPrice = Session::get('cartItemsTotal') + $product->price;
+                        Session::put('cartItemsTotal', $totalPrice);
+
+                        return response()->json([
+                            'status' => 1,
+                            'count' => count(Session::get('cartItems')),
+                            'cart_total_price' => number_format(Session::get('cartItemsTotal'), 2)
+                        ]);
+                    } else {
+                        return response()->json([
+                            'status' => 0,
+                            'count' => count(Session::get('cartItems')),
+                            'cart_total_price' => number_format(Session::get('cartItemsTotal'), 2)
+                        ]);
+                    }
+                } else {
+                    Session::push('cartItems', $item);
+                    Session::put('cartItemsTotal', $product->price);
+                    return response()->json([
+                        'status' => 1,
+                        'count' => count(Session::get('cartItems')),
+                        'cart_total_price' => number_format(Session::get('cartItemsTotal'), 2)
+                    ]);
+                }
+
+            }
+        }
+    }
+}

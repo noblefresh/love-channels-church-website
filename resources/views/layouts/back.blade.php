@@ -1,0 +1,5 @@
+@include('inc.back-head')
+@include('inc.back-navbar')
+@include('inc.back-sidenav')
+@yield('content')
+@include('inc.back-foot')
