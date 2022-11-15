@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,4 +13,5 @@ Route::middleware(['auth:admin'])->prefix(config('app.admin_prefix'))->group(fun
     Route::resource('/categories', App\Http\Controllers\Backend\CategoryController::class);
     Route::resource('/products', App\Http\Controllers\Backend\ProductController::class);
     Route::resource('/livestreams', App\Http\Controllers\Backend\LiveStreamController::class);
-}); 
+    Route::resource('/sermons', App\Http\Controllers\Backend\SermonController::class);
+});

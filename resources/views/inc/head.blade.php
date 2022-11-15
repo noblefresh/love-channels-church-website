@@ -50,6 +50,7 @@
 <link rel="alternate stylesheet" type="text/css" href="{{ asset('front/css/colors/green.css') }}" title="color4" />
 
 <link rel="alternate stylesheet" type="text/css" href="{{ asset('front/css/colors/darkgreen.css') }}" title="color5" />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <style>
     ul li a{
         /*color: #0b06a9 !important;*/

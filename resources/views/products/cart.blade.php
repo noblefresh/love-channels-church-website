@@ -3,9 +3,9 @@
 
 <div class="page-top">
 
-	<div class="parallax" style="background:url(/front/images/parallax1.jpg);"></div>	
+	<div class="parallax" style="background:url(/front/images/parallax1.jpg);"></div>
 
-	<div class="container"> 
+	<div class="container">
 
 		<h1>CART <span>PAGE</span></h1>
 
@@ -50,53 +50,55 @@
 							</div>
 
 							<ul class="cart-list">
+                                @if(Session::get('cartItems') !== null)
+                                    @if (count(Session::get('cartItems')) > 0)
+                                    @foreach (Session::get('cartItems') as $item)
+                                        <li>
 
-								@if (count(Session::get('cartItems')) > 0)
-									@foreach (Session::get('cartItems') as $item)
-										<li>
+                                            <ul class="cart-product">
 
-											<ul class="cart-product">
+                                                <li>
 
-												<li>
+                                                    <img class="dustbin" src="{{ asset('front/images/dustbin.png') }}" alt="" />
+                                                    @php($image = $item['thumbnail'])
+                                                    <img src="{{ asset("$image") }}" alt="" />
 
-													<img class="dustbin" src="{{ asset('front/images/dustbin.png') }}" alt="" />
-													@php($image = $item['thumbnail'])
-													<img src="{{ asset("$image") }}" alt="" />
+                                                </li>
 
-												</li>
+                                                <li class="long-width">{{ $item['name'] }}</li>
 
-												<li class="long-width">{{ $item['name'] }}</li>
+                                                <li>&#8358;{{ number_format($item['price'], 2) }}</li>
 
-												<li>&#8358;{{ number_format($item['price'], 2) }}</li>
+                                                <li>
 
-												<li>
+                                                1
 
-												1
+                                                </li>
 
-												</li>
+                                                <li>&#8358;{{ number_format($item['price'], 2) }}</li>
 
-												<li>&#8358;{{ number_format($item['price'], 2) }}</li>
+                                            </ul>
 
-											</ul>
+                                        </li>
+                                    @endforeach
 
-										</li>
-									@endforeach
+                                    <li>
 
-									<li>
+                                        Total: &#8358;{{ number_format(Session::get('cartItemsTotal'), 2) }}
 
-										Total: &#8358;{{ number_format(Session::get('cartItemsTotal'), 2) }}
+                                        <a href="{{ route('products.checkout') }}" class="pull-right">PROCEED TO CHECKOUT</a>
 
-										<input class="pull-right" type="submit" value="PROCEED TO CHECKOUT" />
 
-										
 
-									</li>
+                                    </li>
 
-								@endif
+                                @endif
+                                @endif
 
-								
 
-								
+
+
+
 
 							</ul>
 
@@ -104,13 +106,13 @@
 
 
 
-						
-
-						
 
 
 
-						
+
+
+
+
 
 
 

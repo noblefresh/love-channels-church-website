@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{ route('admin.dashboard') }}"> <img alt="image" src="{{ asset('front/images/logo.png') }}" class="header-logo" /> 
+            <a href="{{ route('admin.dashboard') }}"> <img alt="image" src="{{ asset('front/images/logo.png') }}" class="header-logo" />
             	{{-- <span
                 class="logo-name">LoveChannels</span> --}}
             </a>
@@ -19,7 +19,16 @@
                 <li><a class="nav-link" href="{{ route('events.index') }}">View Events</a></li>
               </ul>
             </li>
-            
+
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                    data-feather="calendar"></i><span>Manage Sermons</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="{{ route('sermons.create') }}">Create Sermon</a></li>
+                  {{-- <li><a class="nav-link" href="{{ route('events.index') }}">View Events</a></li> --}}
+                </ul>
+              </li>
+
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="grid"></i><span> Shop Categories</span></a>
@@ -59,10 +68,10 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
-                
+
             </li>
-            
-           
+
+
           </ul>
         </aside>
       </div>

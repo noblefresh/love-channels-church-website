@@ -13,7 +13,7 @@
 				<div class="col-md-8 column">
 
 					<div class="latest-sermons remove-ext">
-
+                        @foreach ($sermons as $sermon)
 						<div class="sermon">
 
 							<div class="row">
@@ -22,25 +22,34 @@
 
 									<div class="image">
 
-										<img src="images/resource/sermon1.jpg" alt="" />
+										<img src="{{ asset("$sermon->thumbnail") }}" alt="" />
 
-										<a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+										{{-- <a href="sermon-single.html" title=""><i class="fa fa-link"></i></a> --}}
 
 									</div>
 
 								</div>
 
-								<div class="col-md-9">
+                                    <div class="col-md-9">
 
-									<h3><a href="sermon-single.html" title="">Global Warning and the End of the Age</a></h3>
+                                        <h3><a href="{{ url('/sermon-read/'.$sermon->slug) }}" title="">{{ $sermon->title }}</a></h3>
 
-									<span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
+                                        <span><i class="fa fa-calendar-o"></i> {{ date_format(date_create($sermon->created_at), 'D jS M, Y. H:i A') }}</span>
+                                        @php
+                                            $string = strip_tags($sermon->description);
+                                            if (strlen($string) > 100) {
+                                                $stringCut = substr($string, 0, 150);
+                                                $endPoint = strrpos($stringCut, ' ');
+                                                $string = substr($stringCut, 0, $endPoint);
+                                                // $string .= '<a style="cursor: pointer;" href="" >Read More</a>';
+                                            }
+                                        @endphp
+                                        {!! $string !!}...
 
-									<p>Aenean leo vene quam. Pellntes ique ornare sem wedte venenatis. Pellntes ornew vestibum.Aenean leo vene quam. Pellntes ique ornare sem wedte venenatis Aenean leo vene quam. Pellntes ique ornare sem wedte venenatis</p>
+                                    </div>
 
-								</div>
 
-								<div class="hover-in">
+								{{-- <div class="hover-in">
 
 									<ul class="sermon-media">
 
@@ -58,11 +67,12 @@
 
 									</ul>
 
-								</div>
+								</div> --}}
 
 							</div>
 
 						</div><!-- SERMON -->
+                        @endforeach
 
 					</div><!-- LATEST SERMONS -->
 
@@ -90,7 +100,7 @@
 
 				</aside><!-- SIDEBAR -->
 
-				
+
 
 			</div>
 
@@ -98,5 +108,5 @@
 
 	</div>
 
-</section>	
+</section>
 @endsection

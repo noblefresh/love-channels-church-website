@@ -72,7 +72,7 @@
                     </a>
                 </p>
 
-              
+
 
             </div>
 
@@ -94,57 +94,20 @@
 
                 <li ><a style="color: #0b06a9;" href="/" title="">Home</a></li>
 
-                
-
-                <li class="menu-item-has-children"><a href="#" title="">Gallery</a>
-
-                    <ul>
-
-                        <li><a href="gallery.html" title="">Masonary 3 Col</a></li>
-
-                        <li><a href="gallery2.html" title="">Masonary 4 Col</a></li>
-
-                        <li><a href="gallery3.html" title="">Simple 3 Col</a></li>
-
-                        <li><a href="gallery4.html" title="">Simple 4 Col</a></li>
-
-                    </ul>
-
-                </li>
 
                 <li class=""><a href="{{ route('products') }}" title="">Shop</a>
 
-                  
+
 
                 </li>
 
-                <li class="menu-item-has-children"><a href="#" title="">Blog</a>
+                <li class=""><a href="{{ route('events') }}" title="">Events</a></li>
 
-                    <ul>
+                <li class=""><a href="{{ route('sermon') }}" title="">Sermons</a></li>
 
-                        <li><a href="blog.html" title="">Blog</a></li>
+                <li><a href="{{ route('about') }}" title="">About</a></li>
 
-                        <li><a href="blog-single.html" title="">Blog Single Page</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li class="menu-item-has-children"><a href="#" title="">Sermons</a>
-
-                    <ul>
-
-                        <li><a href="sermon.html" title="">Sermons</a></li>
-
-                        <li><a href="sermon-single.html" title="">Sermon Single Page</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li><a href="about.html" title="">About</a></li>
-
-                <li><a href="contact.html" title="">Contact</a></li>
+                <li><a href="{{ route('contact') }}" title="">Contact</a></li>
 
             </ul>
 

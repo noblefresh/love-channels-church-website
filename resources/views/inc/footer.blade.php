@@ -1,6 +1,9 @@
 
 
-
+<?php
+use App\Models\ChurchEvent;
+$event = ChurchEvent::latest()->take(2)->get();
+?>
 <footer>
 
     <div class="block blackish">
@@ -9,7 +12,7 @@
 
         <div class="container">
 
-            <div class="row"> 
+            <div class="row">
 
                 <div class="col-md-4">
 
@@ -35,7 +38,7 @@
 
                                 </ul>
 
-                            </div>                          
+                            </div>
 
                             <ul class="social-media">
 
@@ -47,7 +50,7 @@
 
                                 <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
 
-                            </ul>                                                           
+                            </ul>
 
                         </div>
 
@@ -65,13 +68,14 @@
 
                             <div id="message"></div>
 
-                            <form method="post" action="https://html.webinane.com/deeds/contact.php" name="contactform" id="contactform">
+                            <form method="post" action="{{ url('/save_contact') }}" name="contactform" id="contactform">
+                                @csrf
 
                                 <input name="name" class="half-field form-control" type="text" id="name"  placeholder="Name" />
 
                                 <input name="email" class="half-field form-control" type="text" id="email" placeholder="Email" />
 
-                                <textarea name="comments" class="form-control" id="comments" placeholder="Description" ></textarea>
+                                <textarea name="message" class="form-control" id="comments" placeholder="Description" ></textarea>
 
                                 <input class="submit" type="submit"  id="submit" value="SUBMIT" />
 
@@ -92,40 +96,34 @@
                         <div class="widget-title"><h4>Recent Blog</h4></div>
 
                         <div class="remove-ext">
-
+                            @foreach ($event as $item)
                             <div class="widget-blog">
 
-                                <div class="widget-blog-img"><img src="images/resource/widget-blog.jpg" alt="" /></div>
+                                <div class="widget-blog-img"><img src="{{ asset("$item->thumbnail") }}" alt="" /></div>
 
-                                <h6><a href="blog-single.html" title=""> Consectetur Adipisicing.</a></h6>
+                                <h6><a href="{{ url('/event-read/'.$item->slug) }}" title=""> {{ $item->name }}</a></h6>
+                                @php
+                                $string = strip_tags($item->description);
+                                if (strlen($string) > 80) {
+                                    $stringCut = substr($string, 0, 80);
+                                    $endPoint = strrpos($stringCut, ' ');
+                                    $string = substr($stringCut, 0, $endPoint);
+                                }
+                                @endphp
+                                <p>{!! $string !!}</p>
 
-                                <p>Homemade cream cheese mints These are amazing!Christmas!!- must try!</p>
+                                <span><i class="fa fa-calendar-o"></i> {{ date_format(date_create($item->created_at), 'D jS M, Y.') }}</span>
 
-                                <span><i class="fa fa-calendar-o"></i> November 01, 2013</span>
-
-                            </div><!-- WIDGET BLOG -->
-
-
-
-                            <div class="widget-blog">
-
-                                <div class="widget-blog-img"><img src="images/resource/widget-blog2.jpg" alt="" /></div>
-
-                                <h6><a href="blog-single.html" title=""> Consectetur Adipisicing.</a></h6>
-
-                                <p>Homemade cream cheese mints These are amazing!Christmas!!- must try!</p>
-
-                                <span><i class="fa fa-calendar-o"></i> November 01, 2013</span>
-
-                            </div><!-- WIDGET BLOG -->
+                            </div>
+                            @endforeach
 
                         </div>
 
-                        
+
 
                     </div>
 
-                </div><!-- RECENT BLOG -->              
+                </div><!-- RECENT BLOG -->
 
             </div>
 

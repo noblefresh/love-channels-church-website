@@ -1,13 +1,19 @@
 @extends('layouts.front')
 
 @section('content')
+<?php
+use App\Models\Sermon;
+use App\Models\Product;
+$products = Product::latest()->take(2)->get();
+$sermons = Sermon::latest()->take(2)->get();
+?>
 <div class="slider">
 
     <div class="rev_slider_wrapper">
 
         <div id="slider1" class="rev_slider"  data-version="5.0">
 
-            <ul>    
+            <ul>
 
                 <li data-transition="zoomout" data-slotamount="10" data-masterspeed="3000" >
 
@@ -23,7 +29,7 @@
 
                     <a href="#" title="" class="tp-caption slide-button colored-box tp-resizeme rs-parallaxlevel-2" data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['280','280','280','280']" data-voffset="['0','0','0','0']" data-fontsize="['13','13','13','13']" data-lineheight="['15','15','13','13']" data-width="['none','none','none','400']" data-height="none" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-transform_idle="o:1;" data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:2000;e:Back.easeInOut;" data-transform_out="y:bottom(R);s:2000;e:Back.easeIn;s:1000;e:Back.easeIn;" data-start="2100" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="white-space: nowrap;">Read More</a>
 
-                    
+
 
                     <div class="tp-caption tp-resizeme rs-parallaxlevel-2" data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']" data-transform_idle="o:1;" data-transform_in="y:bottom(R);z:0;rX:90;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:2000;e:Elastic.easeInOut;" data-transform_out="x:right(R);s:2000;e:Back.easeIn;s:1000;e:Back.easeIn;" data-start="2300" data-splitin="none" data-splitout="none" data-responsive_offset="on" data-no-retina><img src="{{ asset('front/images/resource/slide9-man.png') }}" alt="" data-ww="['332px','332px','200px','170px']" data-hh="['412px','412px','251px','213px']" itemprop="image" data-no-retina /></div>
 
@@ -71,13 +77,13 @@
 
                     <a href="#" title="" class="tp-caption dark-bg slide-button slide-button2 tp-resizeme rs-parallaxlevel-2" data-x="['500','500','500','500']" data-hoffset="['0','0','0','0']" data-y="['300','300','300','300']" data-voffset="['0','0','0','0']" data-fontsize="['14','14','13','13']" data-lineheight="['15','15','13','13']" data-width="['none','none','none','400']" data-height="none" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-transform_idle="o:1;" data-transform_in="z:0;rX:-45;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:2000;e:Back.easeInOut;" data-transform_out="x:right(R);s:2000;e:Back.easeIn;s:1000;e:Back.easeIn;" data-start="2300" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="white-space: nowrap;"><i class="fa tp-shape fa-shopping-cart"></i>Donate Now</a>
 
-                </li> 
+                </li>
 
             </ul>
 
-        </div>  
+        </div>
 
-    </div><!-- REVOLUTION SLIDER -->    
+    </div><!-- REVOLUTION SLIDER -->
 
 </div>
 
@@ -108,10 +114,10 @@
                         <h4><i class="fa fa-bank"></i>NEXT ONLINE EXPERIENCE WITH US</h4>
 
                         <p>
-                       The Lovechannels is a church for all. Our doors are always open and we tolerate and accommodate every tribe, all types and categories of men and women. 
+                       The Lovechannels is a church for all. Our doors are always open and we tolerate and accommodate every tribe, all types and categories of men and women.
                    </p>
                    <p>
-                    God's love is unconditional and for all of us at The Lovechannels, we receive it with open arms and channel this love by demonstrating and allowing it to flow through us to others around us. 
+                    God's love is unconditional and for all of us at The Lovechannels, we receive it with open arms and channel this love by demonstrating and allowing it to flow through us to others around us.
 
                         </p>
 
@@ -301,115 +307,26 @@
 
                             <div class="products-carousel">
 
+                                @foreach ($products as $product)
                                 <div class="product">
 
-                                    <img src="images/resource/book1.jpg" alt="" />
+                                    <img src="{{ asset("$product->thumbnail") }}" alt="" />
 
-                                    <i>Limited Edition</i>
+                                    <i>{{ $product->category->name }}</i>
 
-                                    <h3><a href="product-single.html" title="">Four Blood Moons</a></h3>
+                                    <h3><a href="#" title="">{{ $product->name }}</a></h3>
 
                                     <div class="product-bottom">
 
-                                        <span>$ 25</span>   
+                                        <span>&#8358;{{ number_format($product->price, 2) }}</span>
 
-                                        <a href="product-single.html" title=""><i class="fa fa-shopping-cart"></i>ADD TO CART</a>
-
-                                    </div>
-
-                                </div><!-- BOOK -->
-
-                                <div class="product">
-
-                                    <img src="images/resource/book2.jpg" alt="" />
-
-                                    <i>Limited Edition</i>
-
-                                    <h3><a href="product-single.html" title="">Seeking Allah, Finding Jesus</a></h3>
-
-                                    <div class="product-bottom">
-
-                                        <span>$ 25</span>   
-
-                                        <a href="product-single.html" title=""><i class="fa fa-shopping-cart"></i>ADD TO CART</a>
+                                        <a href="#" title="" data-product_id="{{ $product->id }}" class="addCartBtn"><i class="fa fa-shopping-cart"></i>ADD TO CART</a>
 
                                     </div>
 
-                                </div><!-- BOOK -->
-
-                                <div class="product">
-
-                                    <img src="images/resource/book3.jpg" alt="" />
-
-                                    <i>Limited Edition</i>
-
-                                    <h3><a href="product-single.html" title="">Truth Matters</a></h3>
-
-                                    <div class="product-bottom">
-
-                                        <span>$ 54</span>   
-
-                                        <a href="product-single.html" title=""><i class="fa fa-shopping-cart"></i>ADD TO CART</a>
-
-                                    </div>
-
-                                </div><!-- BOOK -->
-
-                                <div class="product">
-
-                                    <img src="images/resource/book4.jpg" alt="" />
-
-                                    <i>Limited Edition</i>
-
-                                    <h3><a href="product-single.html" title="">Church Doctraine</a></h3>
-
-                                    <div class="product-bottom">
-
-                                        <span>$ 123</span>  
-
-                                        <a href="product-single.html" title=""><i class="fa fa-shopping-cart"></i>ADD TO CART</a>
-
-                                    </div>
-
-                                </div><!-- BOOK -->
-
-                                <div class="product">
-
-                                    <img src="images/resource/book5.jpg" alt="" />
-
-                                    <i>Limited Edition</i>
-
-                                    <h3><a href="product-single.html" title="">Christian Locket</a></h3>
-
-                                    <div class="product-bottom">
-
-                                        <span>$ 645</span>  
-
-                                        <a href="product-single.html" title=""><i class="fa fa-shopping-cart"></i>ADD TO CART</a>
-
-                                    </div>
-
-                                </div><!-- BOOK -->
-
-                                <div class="product">
-
-                                    <img src="images/resource/book6.jpg" alt="" />
-
-                                    <i>Limited Edition</i>
-
-                                    <h3><a href="product-single.html" title="">Christian Necklaces</a></h3>
-
-                                    <div class="product-bottom">
-
-                                        <span>$ 42</span>   
-
-                                        <a href="product-single.html" title=""><i class="fa fa-shopping-cart"></i>ADD TO CART</a>
-
-                                    </div>
-
-                                </div><!-- BOOK -->
-
-                            </div><!-- BOOK CAROUSEL -->
+                                </div>
+                                @endforeach
+                            </div>
 
                         </div>
 
@@ -421,6 +338,7 @@
 
                     <div class="latest-sermons remove-ext">
 
+                        @foreach ($sermons as $sermon)
                         <div class="sermon">
 
                             <div class="row">
@@ -429,61 +347,9 @@
 
                                     <div class="image">
 
-                                        <img src="images/resource/sermon1.jpg" alt="" />
+                                        <img src="{{ asset("$sermon->thumbnail") }}" alt="" />
 
-                                        <a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-md-9">
-
-                                    <h3><a href="sermon-single.html" title="">Christmas: Doing God’s Will</a></h3>
-
-                                    <span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
-
-                                    <p>Aenean leo vene quam. Pellntes ique ornare sem eius modte venenatis vestibum. Cras mattis itugir pur</p>
-
-                                </div>
-
-                                <div class="hover-in">
-
-                                    <ul class="sermon-media">
-
-                                        <li><a href="http://vimeo.com/44867610" data-rel="prettyPhoto" title=""><i class="fa fa-film"></i></a></li>
-
-                                        <li><a title=""><i class="audio-btn fa fa-headphones"></i>
-
-                                            <div class="audioplayer"><audio src="sermon.mp3"></audio><span class="cross">X</span></div>
-
-                                        </a></li>
-
-                                        <li><a target="_blank" href="http://themes.webinane.com/deeds/test.doc" title=""><i class="fa fa-download"></i></a></li>
-
-                                        <li><a target="_blank" href="http://themes.webinane.com/deeds/test.pdf" title=""><i class="fa fa-book"></i></a></li>
-
-                                    </ul>
-
-                                </div>
-
-                            </div>
-
-                        </div><!-- SERMON -->
-
-
-
-                        <div class="sermon">
-
-                            <div class="row">
-
-                                <div class="col-md-3">
-
-                                    <div class="image">
-
-                                        <img src="images/resource/sermon2.jpg" alt="" />
-
-                                        <a href="sermon-single.html" title=""><i class="fa fa-link"></i></a>
+                                        {{-- <a href="sermon-single.html" title=""><i class="fa fa-link"></i></a> --}}
 
                                     </div>
 
@@ -491,37 +357,26 @@
 
                                 <div class="col-md-9">
 
-                                    <h3><a href="sermon-single.html" title="">Family Matters</a></h3>
+                                    <h3><a href="{{ url('/sermon-read/'.$sermon->slug) }}" title="">{{ $sermon->title }}</a></h3>
 
-                                    <span><i class="fa fa-calendar-o"></i> November 01, 2014</span>
-
-                                    <p>Aenean leo vene quam. Pellntes ique ornare sem eius modte venenatis vestibum. Cras mattis itugir pur</p>
-
-                                </div>
-
-                                <div class="hover-in">
-
-                                    <ul class="sermon-media">
-
-                                        <li><a href="http://vimeo.com/44867610" data-rel="prettyPhoto" title=""><i class="fa fa-film"></i></a></li>
-
-                                        <li><a title=""><i class="audio-btn fa fa-headphones"></i>
-
-                                            <div class="audioplayer"><audio src="sermon.mp3"></audio><span class="cross">X</span></div>
-
-                                        </a></li>
-
-                                        <li><a target="_blank" href="http://themes.webinane.com/deeds/test.doc" title=""><i class="fa fa-download"></i></a></li>
-
-                                        <li><a target="_blank" href="http://themes.webinane.com/deeds/test.pdf" title=""><i class="fa fa-book"></i></a></li>
-
-                                    </ul>
+                                        <span><i class="fa fa-calendar-o"></i> {{ date_format(date_create($sermon->created_at), 'D jS M, Y. H:i A') }}</span>
+                                        @php
+                                            $string = strip_tags($sermon->description);
+                                            if (strlen($string) > 100) {
+                                                $stringCut = substr($string, 0, 150);
+                                                $endPoint = strrpos($stringCut, ' ');
+                                                $string = substr($stringCut, 0, $endPoint);
+                                                // $string .= '<a style="cursor: pointer;" href="" >Read More</a>';
+                                            }
+                                        @endphp
+                                        {!! $string !!}...
 
                                 </div>
 
                             </div>
 
-                        </div><!-- SERMON -->
+                        </div>
+                        @endforeach
 
                     </div><!-- LATEST SERMONS -->
 
@@ -557,7 +412,7 @@
 
                         <div class="tweets-slides">
 
-                            
+
 
                         </div>
 
