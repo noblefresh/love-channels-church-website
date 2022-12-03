@@ -100,7 +100,7 @@ $event = ChurchEvent::latest()->take(2)->get();
                             <div class="widget-blog">
 
                                 <div class="widget-blog-img"><img src="{{ asset("$item->thumbnail") }}" alt="" /></div>
-
+                                
                                 <h6><a href="{{ url('/event-read/'.$item->slug) }}" title=""> {{ $item->name }}</a></h6>
                                 @php
                                 $string = strip_tags($item->description);
