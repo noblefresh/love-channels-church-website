@@ -75,25 +75,25 @@
                         <div class="col-md-3">
                             <div class="info-block">
                                 <i class="fa fa-home"></i>
-                                <p>310 South Jurack Avenue</p>
+                                <p>Plot 175 Ada George Rd, Port Harcourt, R/S</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="info-block">
                                 <i class="fa fa-info"></i>
-                                <p>www.themes.webinane.com</p>
+                                <p>www.thelovechannelng.com</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="info-block">
                                 <i class="fa fa-envelope-o"></i>
-                                <p>youremail@yourdomain.com</p>
+                                <p>thelovechannelng@gmail.com</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="info-block">
                                 <i class="fa fa-mobile"></i>
-                                <p>(000) +123 123 1235</p>
+                                <p>+234-703-9979-215</p>
                             </div>
                         </div>
                     </div>

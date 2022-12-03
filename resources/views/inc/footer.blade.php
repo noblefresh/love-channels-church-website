@@ -22,19 +22,19 @@ $event = ChurchEvent::latest()->take(2)->get();
 
                             <img width="200px" src="{{ asset('front/images/logo.png') }}" alt="" />
 
-                            <span>We Give Best Services</span>
+                            {{-- <span>We Give Best Services</span> --}}
 
-                            <p>Homemade cream cheese mints These are amazing! Made them last Christmas!!- must try!</p>
+                            <p>The Lovechannels is a church for all. Our doors are always open and we tolerate and accommodate every tribe, all types and categories of men and women.</p>
 
                             <div class="contact">
 
                                 <ul>
 
-                                    <li><span><i class="fa fa-phone"></i>Phone :</span> ( +185 557 89 89 ) ( +185 557 89 89 )</li>
+                                    <li><span><i class="fa fa-phone"></i>Phone :</span> ( +234-703-9979-215 )</li>
 
-                                    <li><span><i class="fa fa-envelope"></i>Email:</span> Contactchurch@simple.com</li>
+                                    <li><span><i class="fa fa-envelope"></i>Email:</span> thelovechannelng@gmail.com</li>
 
-                                    <li><span><i class="fa fa-home"></i>Address:</span> Home Fronts 27# street 7 Road Green</li>
+                                    <li><span><i class="fa fa-home"></i>Address:</span> Plot 175 Ada George Rd, Port Harcourt, R/S</li>
 
                                 </ul>
 
@@ -93,7 +93,7 @@ $event = ChurchEvent::latest()->take(2)->get();
 
                     <div class="widget">
 
-                        <div class="widget-title"><h4>Recent Blog</h4></div>
+                        <div class="widget-title"><h4>Recent Events</h4></div>
 
                         <div class="remove-ext">
                             @foreach ($event as $item)

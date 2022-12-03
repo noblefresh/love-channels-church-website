@@ -148,15 +148,15 @@
 
 								<div class="col-md-9">
 
-									<h4>GARY HARREL</h4>
+									<h4>CHIOMA & NDUBUISI RUFUS</h4>
 
-									<span>DIRECTOR-BASELINE</span>
+									<span>RESIDENT PASTOR</span>
 
-									<p>Ut ac eleifend mauris, ac porta lacus. Sed pharetra magna massa, sit amet condimentum risus congue ut. Duis eu neque convallis, auctor lacus sed, tincidunt arcu. Aliquam vitae hendrerit dolor. Ut ac eleifend mauris, ac porta lacus. Sed pharetra magna massa, sit amet condimentum risus congue ut. Ut ac eleifend mauris, ac porta lacus. Sed pharetra magna massa, sit amet condimentum risus congue ut. Duis eu neque convallis, auctor lacus sed, tincidunt arcu. </p>
+									<p>We believe that God deserves our best. That superior quality should mark what a Christian does. That it is a good testimony for a Christian to produce superior quality. It is a poor testimony for a Christian to have inferior quality. We strive for excellence in everything that we do. We strive for it in worship. We strive for it in music, in messages, in teaching, in pastoral care, in evangelism, in organization, in advertising.</p>
 
 									<ul class="sermon-media">
 
-										<li><a href="http://vimeo.com/44867610" data-rel="prettyPhoto" title=""><i class="fa fa-film"></i></a></li>
+										<li><a href="" data-rel="prettyPhoto" title=""><i class="fa fa-film"></i></a></li>
 
 										<li><a title=""><i class="audio-btn fa fa-headphones"></i>
 
@@ -164,9 +164,9 @@
 
 										</a></li>
 
-										<li><a target="_blank" href="http://themes.webinane.com/deeds/test.doc" title=""><i class="fa fa-download"></i></a></li>
+										<li><a target="_blank" href="" title=""><i class="fa fa-download"></i></a></li>
 
-										<li><a target="_blank" href="http://themes.webinane.com/deeds/test.pdf" title=""><i class="fa fa-book"></i></a></li>
+										<li><a target="_blank" href="" title=""><i class="fa fa-book"></i></a></li>
 
 									</ul>
 
@@ -175,190 +175,6 @@
 							</div>
 
 						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-</section>
-
-
-
-<section>
-
-	<div class="block">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-12">
-
-					<div class="title">
-
-						<span>Pellent Esque Tellus</span>
-
-						<h2>MEET <span>OUR STAFF</span></h2>
-
-					</div>
-
-
-
-					<div class="row">
-
-						<div class="team-carousel">
-
-							<div class="member">
-
-								<div class="team">
-
-									<div class="team-img">
-
-										<img src="images/resource/team1.jpg" alt="" />
-
-									</div>
-
-									<div class="member-detail">
-
-										<h3><a href="team-single.html" title="">BOB SMITH</a></h3>
-
-										<span>SENIOR PASTOR</span>
-
-										<p>Lorem ipsum dolor sit a onsec tetiri adien tashn commodo leg tashn dol tashin tyons piscin.</p>
-
-									</div>
-
-								</div>
-
-							</div><!-- MEMBER -->
-
-							<div class="member">
-
-								<div class="team">
-
-									<div class="team-img">
-
-										<img src="images/resource/team2.jpg" alt="" />
-
-									</div>
-
-									<div class="member-detail">
-
-										<h3><a href="team-single.html" title="">LEOMA KITN</a></h3>
-
-										<span>SENIOR PASTOR</span>
-
-										<p>Lorem ipsum dolor sit a onsec tetiri adien tashn commodo leg tashn dol tashin tyons piscin.</p>
-
-									</div>
-
-								</div>
-
-							</div><!-- MEMBER -->
-
-							<div class="member">
-
-								<div class="team">
-
-									<div class="team-img">
-
-										<img src="images/resource/team3.jpg" alt="" />
-
-									</div>
-
-									<div class="member-detail">
-
-										<h3><a href="team-single.html" title="">RIFF KALE</a></h3>
-
-										<span>SENIOR PASTOR</span>
-
-										<p>Lorem ipsum dolor sit a onsec tetiri adien tashn commodo leg tashn dol tashin tyons piscin.</p>
-
-									</div>
-
-								</div>
-
-							</div><!-- MEMBER -->
-
-							<div class="member">
-
-								<div class="team">
-
-									<div class="team-img">
-
-										<img src="images/resource/team4.jpg" alt="" />
-
-									</div>
-
-									<div class="member-detail">
-
-										<h3><a href="team-single.html" title="">TOM FOBE</a></h3>
-
-										<span>SENIOR PASTOR</span>
-
-										<p>Lorem ipsum dolor sit a onsec tetiri adien tashn commodo leg tashn dol tashin tyons piscin.</p>
-
-									</div>
-
-								</div>
-
-							</div><!-- MEMBER -->
-
-							<div class="member">
-
-								<div class="team">
-
-									<div class="team-img">
-
-										<img src="images/resource/team5.jpg" alt="" />
-
-									</div>
-
-									<div class="member-detail">
-
-										<h3><a href="team-single.html" title="">SEIMN LINEO</a></h3>
-
-										<span>SENIOR PASTOR</span>
-
-										<p>Lorem ipsum dolor sit a onsec tetiri adien tashn commodo leg tashn dol tashin tyons piscin.</p>
-
-									</div>
-
-								</div>
-
-							</div><!-- MEMBER -->
-
-							<div class="member">
-
-								<div class="team">
-
-									<div class="team-img">
-
-										<img src="images/resource/team6.jpg" alt="" />
-
-									</div>
-
-									<div class="member-detail">
-
-										<h3><a href="team-single.html" title="">KOJEO SLORM</a></h3>
-
-										<span>SENIOR PASTOR</span>
-
-										<p>Lorem ipsum dolor sit a onsec tetiri adien tashn commodo leg tashn dol tashin tyons piscin.</p>
-
-									</div>
-
-								</div>
-
-							</div><!-- MEMBER -->
-
-						</div><!-- TEAM CAROUSEL -->
 
 					</div>
 

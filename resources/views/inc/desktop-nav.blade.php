@@ -45,19 +45,19 @@
 
             </div>
 
-            <p><i class="fa fa-mobile"></i> 24/7 Support: 123-456-7890</p><!--- CONTACT -->
+            <p><i class="fa fa-mobile"></i> 24/7 Support: +234-703-9979-215</p><!--- CONTACT -->
 
-            <p><i class="fa fa-envelope"></i>  Youremail@yourdomain.com</p><!--- EMAIL -->
+            <p><i class="fa fa-envelope"></i>thelovechannelng@gmail.com</p><!--- EMAIL -->
 
             <ul class="social-media">
 
                 <li><a title="" href="#"><i class="fa fa-linkedin"></i></a></li>
 
-                <li><a title="" href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a title="" href="https://youtube.com/channel/UCa3b7jBLAYUOMOLyyMo-6zg"><i class="fa fa-youtube"></i></a></li>
 
-                <li><a title="" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a title="" href="https://twitter.com/thelovechannels"><i class="fa fa-twitter"></i></a></li>
 
-                <li><a title="" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a title="" href="https://www.facebook.com/thelovechannels/"><i class="fa fa-facebook"></i></a></li>
 
             </ul>
 
@@ -94,18 +94,14 @@
 
                 <li ><a style="color: #0b06a9;" href="/" title="">Home</a></li>
 
+                <li><a href="{{ route('about') }}" title="">About</a></li>
 
-                <li class=""><a href="{{ route('products') }}" title="">Shop</a>
-
-
-
-                </li>
 
                 <li class=""><a href="{{ route('events') }}" title="">Events</a></li>
 
                 <li class=""><a href="{{ route('sermon') }}" title="">Sermons</a></li>
 
-                <li><a href="{{ route('about') }}" title="">About</a></li>
+                <li class=""><a href="{{ route('products') }}" title="">Shop</a></li>
 
                 <li><a href="{{ route('contact') }}" title="">Contact</a></li>
 

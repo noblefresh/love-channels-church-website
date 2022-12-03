@@ -94,13 +94,11 @@
 
 						<ul>
 
-							<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Log in</a></li>
+							<li><a href="{{ route('events') }}" title=""><i class="fa fa-hand-o-right"></i>Events</a></li>
 
-							<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Entries RSS</a></li>
+							<li><a href="{{ route('sermon') }}" title=""><i class="fa fa-hand-o-right"></i>Sermon</a></li>
 
-							<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Comments RSS</a></li>
-
-							<li><a href="blog.html" title=""><i class="fa fa-hand-o-right"></i>Wordpress.org</a></li>
+							<li><a href="{{ route('products') }}" title=""><i class="fa fa-hand-o-right"></i>Shop</a></li>
 
 						</ul>
 

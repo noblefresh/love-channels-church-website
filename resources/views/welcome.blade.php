@@ -123,9 +123,9 @@ $sermons = Sermon::latest()->take(2)->get();
 
                         <ul>
 
-                            <li><i class="fa fa-check"></i> Cras dignissim lacus eget urna fringilla placerat.</li>
+                            <li><i class="fa fa-check"></i> Celebrating the Unconditional Love of God</li>
 
-                            <li><i class="fa fa-check"></i> Interdum et malesuada fames ac ante ipsum primis in faucibus.</li>
+                            <li><i class="fa fa-check"></i> Demonstrating that Love</li>
 
                         </ul>
 
@@ -411,8 +411,6 @@ $sermons = Sermon::latest()->take(2)->get();
                         <span><i class="fa fa-twitter"></i></span>
 
                         <div class="tweets-slides">
-
-
 
                         </div>
 
